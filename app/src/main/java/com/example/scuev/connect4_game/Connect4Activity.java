@@ -1,0 +1,228 @@
+package com.example.scuev.connect4_game;
+
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class Connect4Activity extends AppCompatActivity implements View.OnClickListener
+{
+
+    private Connect4     objConnect4;
+    private int          varPosXInt,varPosYInt;
+    private Button       buttonCircle,buttonTurn,buttonNewGame;
+    TextView             textViewRed,textViewBlue;
+    private String       won;
+    private LinearLayout row1,row2,row3,row4,row5,row6;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().getDecorView().setSystemUiVisibility
+        (
+              View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
+
+        //set content view AFTER ABOVE sequence (to avoid crash)
+        this.setContentView(R.layout.activity_connect4);
+
+        row1 = (LinearLayout)findViewById(R.id.layout_circlesRow1);
+        row2 = (LinearLayout)findViewById(R.id.layout_circlesRow2);
+        row3 = (LinearLayout)findViewById(R.id.layout_circlesRow3);
+        row4 = (LinearLayout)findViewById(R.id.layout_circlesRow4);
+        row5 = (LinearLayout)findViewById(R.id.layout_circlesRow5);
+        row6 = (LinearLayout)findViewById(R.id.layout_circlesRow6);
+
+        //Get evens from imageButtons
+        findViewById(R.id._0_0).setOnClickListener(this);
+        findViewById(R.id._0_1).setOnClickListener(this);
+        findViewById(R.id._0_2).setOnClickListener(this);
+        findViewById(R.id._0_3).setOnClickListener(this);
+        findViewById(R.id._0_4).setOnClickListener(this);
+        findViewById(R.id._0_5).setOnClickListener(this);
+        findViewById(R.id._0_6).setOnClickListener(this);
+        //Get evens from imageButtons
+        findViewById(R.id._1_0).setOnClickListener(this);
+        findViewById(R.id._1_1).setOnClickListener(this);
+        findViewById(R.id._1_2).setOnClickListener(this);
+        findViewById(R.id._1_3).setOnClickListener(this);
+        findViewById(R.id._1_4).setOnClickListener(this);
+        findViewById(R.id._1_5).setOnClickListener(this);
+        findViewById(R.id._1_6).setOnClickListener(this);
+        //Get evens from imageButtons
+        findViewById(R.id._2_0).setOnClickListener(this);
+        findViewById(R.id._2_1).setOnClickListener(this);
+        findViewById(R.id._2_2).setOnClickListener(this);
+        findViewById(R.id._2_3).setOnClickListener(this);
+        findViewById(R.id._2_4).setOnClickListener(this);
+        findViewById(R.id._2_5).setOnClickListener(this);
+        findViewById(R.id._2_6).setOnClickListener(this);
+        //Get evens from imageButtons
+        findViewById(R.id._3_0).setOnClickListener(this);
+        findViewById(R.id._3_1).setOnClickListener(this);
+        findViewById(R.id._3_2).setOnClickListener(this);
+        findViewById(R.id._3_3).setOnClickListener(this);
+        findViewById(R.id._3_4).setOnClickListener(this);
+        findViewById(R.id._3_5).setOnClickListener(this);
+        findViewById(R.id._3_6).setOnClickListener(this);
+        //Get evens from imageButtons
+        findViewById(R.id._4_0).setOnClickListener(this);
+        findViewById(R.id._4_1).setOnClickListener(this);
+        findViewById(R.id._4_2).setOnClickListener(this);
+        findViewById(R.id._4_3).setOnClickListener(this);
+        findViewById(R.id._4_4).setOnClickListener(this);
+        findViewById(R.id._4_5).setOnClickListener(this);
+        findViewById(R.id._4_6).setOnClickListener(this);
+        //Get evens from imageButtons
+        findViewById(R.id._5_0).setOnClickListener(this);
+        findViewById(R.id._5_1).setOnClickListener(this);
+        findViewById(R.id._5_2).setOnClickListener(this);
+        findViewById(R.id._5_3).setOnClickListener(this);
+        findViewById(R.id._5_4).setOnClickListener(this);
+        findViewById(R.id._5_5).setOnClickListener(this);
+        findViewById(R.id._5_6).setOnClickListener(this);
+        //Get evens from button score and newGame
+        findViewById(R.id.new_game_button).setOnClickListener(this);
+        //Instance of the class Game connect4
+        objConnect4     = new Connect4();
+        //Get Button Turn and New Game
+        buttonTurn      = (Button)findViewById(R.id.turn_label);
+        buttonNewGame   = (Button)findViewById(R.id.new_game_button);
+        //set Button Turn default
+        buttonTurn.setText("Blue Turn");
+        //Get Score
+        textViewRed     = (TextView) findViewById(R.id.red_score_label);
+        textViewBlue    = (TextView) findViewById(R.id.blue_score_label);
+        textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
+        textViewBlue.setText(Integer.toString(objConnect4.getScoreGameBlue()));
+
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+
+        switch (v.getId())
+        {
+
+            case R.id.new_game_button:
+                //Reset Game and recreate a new Game and show message
+                objConnect4.newGame();
+                resetGame();
+                Toast.makeText(com.example.scuev.connect4_game.Connect4Activity.this,"New Game",Toast.LENGTH_SHORT).show();
+                break;
+            default:
+
+                try
+                {
+                    buttonCircle         = (Button)findViewById(v.getId());
+                    String valuePosition = buttonCircle.getText().toString();
+                    String[] parts       = valuePosition.split(",");
+                    varPosXInt           = Integer.parseInt(parts[0].toString());
+                    varPosYInt           = Integer.parseInt(parts[1].toString());
+
+                }catch (Exception ex)
+                {
+
+                }finally
+                {
+
+                    if (objConnect4.validateMovedOverCircle(varPosXInt,varPosYInt))
+                    {
+                        if(buttonCircle.getTag()==null)
+                        {
+
+                            if (objConnect4.getTurn() == 1)
+                            {
+                                buttonCircle.setBackgroundResource(R.drawable.blue);
+                                objConnect4.setTurn(2);
+                                buttonCircle.setTag("blue");
+                                buttonTurn.setText("Red Turn");
+                                objConnect4.fillMatrix(varPosXInt, varPosYInt, 1);
+                                won = "Blue Win!";
+                            } else if (objConnect4.getTurn() == 2)
+                            {
+                                buttonCircle.setBackgroundResource(R.drawable.red);
+                                objConnect4.setTurn(1);
+                                buttonTurn.setText("Blue Turn");
+                                buttonCircle.setTag("red");
+                                objConnect4.fillMatrix(varPosXInt, varPosYInt, 2);
+                                won = "Red Win!";
+                            }
+                        }
+                    }
+
+                    if (objConnect4.labelEndGame)
+                    {
+                        AlertDialog alert = new AlertDialog.Builder(this)
+                                .setTitle("Information")
+                                .setMessage(won+" Do you want to continue playing?")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int i) {
+                                        objConnect4.newGame();
+                                        resetGame();
+                                        textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
+                                        textViewBlue.setText(Integer.toString(objConnect4.getScoreGameBlue()));
+                                        Toast.makeText(com.example.scuev.connect4_game.Connect4Activity.this,"Very well, do not give up!",Toast.LENGTH_SHORT).show();
+
+                                    }
+                                }).create();
+                        alert.setCanceledOnTouchOutside(false);
+                        alert.show();
+                    }
+
+                    this.getWindow().getDecorView().setSystemUiVisibility
+                    (
+                          View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    );
+                }
+                break;
+        }
+    }
+
+    private void resetGame()
+    {
+
+        Map<String, LinearLayout> listRows = new HashMap<>();
+        listRows.put("row1",row1);
+        listRows.put("row2",row2);
+        listRows.put("row3",row3);
+        listRows.put("row4",row4);
+        listRows.put("row5",row5);
+        listRows.put("row6",row6);
+
+        for (int x=1;x<=6;x++)
+        {
+            int childCount = listRows.get("row"+x).getChildCount();
+            for(int i=0;i<childCount;i++)
+            {
+                View child =  listRows.get("row"+x).getChildAt(i);
+                //reset all Buttons in vector Layout
+                child.setBackgroundResource(R.drawable.circle_grey);
+                child.setTag(null);
+            }
+        }
+        buttonTurn.setText("Blue Turn");
+    }
+}
