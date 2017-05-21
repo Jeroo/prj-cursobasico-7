@@ -6,28 +6,32 @@ Project Final Android course AlticeRD, in which has developed a game that runs o
 - Horizontal
 - Diagonally
 
-# Eplanation of the game in Spanish:
+## Eplanation of the game in Spanish:
 
 Please visit link beow:
 
 https://docs.google.com/document/d/1TgHJlMmlsj2SG2DFW5hU7GOSz0Zci0ChNH_KdZMM_KI/edit?usp=sharing
 
-# Includes
+## Screenshot
 
-Integrations
-- 
 
-Clases
+
+
+## Includes
+
+### Clases
 - Connect4.java
 - Connect4Activity.java
 - MainActivity.java
 
 
-Install
+### Install
 - Android Studio
 - Android API 25 Platform
 - Java SDK 1.8_77
 
+### License
+- GPL
 
 Done.
 
