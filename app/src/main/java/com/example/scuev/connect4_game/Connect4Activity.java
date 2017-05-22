@@ -1,12 +1,14 @@
 package com.example.scuev.connect4_game;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,13 +34,14 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         //Remove title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.getWindow().getDecorView().setSystemUiVisibility
+
+       /* this.getWindow().getDecorView().setSystemUiVisibility
         (
               View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
             | View.SYSTEM_UI_FLAG_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        );
+            //| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );*/
 
         //set content view AFTER ABOVE sequence (to avoid crash)
         this.setContentView(R.layout.activity_connect4);
@@ -106,14 +109,24 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         buttonTurn      = (Button)findViewById(R.id.turn_label);
         buttonNewGame   = (Button)findViewById(R.id.new_game_button);
         //set Button Turn default
-        buttonTurn.setText("Blue Turn");
+        buttonTurn.setText(R.string.blue_turn);
+        buttonTurn.setBackgroundColor(Color.BLUE);
         //Get Score
         textViewRed     = (TextView) findViewById(R.id.red_score_label);
         textViewBlue    = (TextView) findViewById(R.id.blue_score_label);
+        textViewRed.setText(String.format ("%d", objConnect4.getScoreGameRed()));
+        textViewBlue.setText(String.format ("%d", objConnect4.getScoreGameBlue()));
+        /*
         textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
         textViewBlue.setText(Integer.toString(objConnect4.getScoreGameBlue()));
-
+        */
     }
+
+   /* public void clock(View view)
+    {
+        android.view.animation.Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.clockwise);
+        buttonTurn.setAnimation(animation);
+    }*/
 
     @Override
     public void onClick(View v)
@@ -140,6 +153,7 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
 
                 }catch (Exception ex)
                 {
+                    break;
 
                 }finally
                 {
@@ -154,14 +168,16 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                                 buttonCircle.setBackgroundResource(R.drawable.blue);
                                 objConnect4.setTurn(2);
                                 buttonCircle.setTag("blue");
-                                buttonTurn.setText("Red Turn");
+                                buttonTurn.setText(R.string.red_turn);
+                                buttonTurn.setBackgroundColor(Color.RED);
                                 objConnect4.fillMatrix(varPosXInt, varPosYInt, 1);
                                 won = "Blue Win!";
                             } else if (objConnect4.getTurn() == 2)
                             {
                                 buttonCircle.setBackgroundResource(R.drawable.red);
                                 objConnect4.setTurn(1);
-                                buttonTurn.setText("Blue Turn");
+                                buttonTurn.setText(R.string.blue_turn);
+                                buttonTurn.setBackgroundColor(Color.BLUE);
                                 buttonCircle.setTag("red");
                                 objConnect4.fillMatrix(varPosXInt, varPosYInt, 2);
                                 won = "Red Win!";
@@ -179,8 +195,11 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                                     public void onClick(DialogInterface dialog, int i) {
                                         objConnect4.newGame();
                                         resetGame();
-                                        textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
-                                        textViewBlue.setText(Integer.toString(objConnect4.getScoreGameBlue()));
+                                        textViewRed.setText(String.format ("%d", objConnect4.getScoreGameRed()));
+                                        textViewBlue.setText(String.format ("%d", objConnect4.getScoreGameBlue()));
+                                        //textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
+                                        //textViewBlue.setText(Integer.toString());
+
                                         Toast.makeText(com.example.scuev.connect4_game.Connect4Activity.this,"Very well, do not give up!",Toast.LENGTH_SHORT).show();
 
                                     }
@@ -189,13 +208,13 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                         alert.show();
                     }
 
-                    this.getWindow().getDecorView().setSystemUiVisibility
+                    /*this.getWindow().getDecorView().setSystemUiVisibility
                     (
                           View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    );
+                        //| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    );*/
                 }
                 break;
         }
@@ -223,6 +242,7 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                 child.setTag(null);
             }
         }
-        buttonTurn.setText("Blue Turn");
+        buttonTurn.setText(R.string.blue_turn);
+        buttonTurn.setBackgroundColor(Color.BLUE);
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
@@ -8,31 +7,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <!--TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Connect4 Game"
-            android:fontFamily="cursive"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:textColor="#000000"
-            android:paddingTop="10dp"
-            android:layout_marginBottom="10dp"/-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingBottom="40dp"
+            android:gravity="center"
             android:paddingTop="20dp"
             android:paddingLeft="2dp"
             android:paddingRight="2dp">
             <ImageButton
+                tools:ignore="ContentDescription"
                 android:layout_width="45dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="left"
-                android:text="0"
                 android:src="@drawable/blue_header"
                 android:background="@null"/>
             <TextView
@@ -40,27 +29,25 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="0" />
+                 />
             <Button
                 android:id="@+id/turn_label"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#80BFFF"
+                android:background="#fd70b6e4"
                 android:fontFamily="sans-serif"
                 android:textColor="#FFFFFF"
-                android:text="red turn" />
+                android:text="@string/blue_turn" />
             <TextView
                 android:id="@+id/red_score_label"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="0"/>
+                android:gravity="center"/>
             <ImageButton
-                android:layout_width="60dp"
+                tools:ignore="ContentDescription"
+                android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="left"
-                android:text="1"
                 android:src="@drawable/red_header"
                 android:background="@null" />
         </LinearLayout>
@@ -78,7 +65,7 @@
                 android:fontFamily="sans-serif"
                 android:textColor="#FFF"
                 android:background="@android:color/holo_green_light"
-                android:text="New Game" />
+                android:text="@string/new_game" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout_circles"
@@ -95,59 +82,59 @@
                 android:orientation="horizontal"
                >
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_0"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:text="0,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_1"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_2"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_3"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_4"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_5"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    tools:ignore="ContentDescription"
                     android:id="@+id/_0_6"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="0,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
@@ -162,7 +149,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -170,7 +157,7 @@
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -178,7 +165,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -186,7 +173,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -194,7 +181,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -202,7 +189,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -210,7 +197,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="1,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
@@ -225,7 +212,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -233,7 +220,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -241,7 +228,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -249,7 +236,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -257,7 +244,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -265,7 +252,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -273,7 +260,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="2,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
@@ -288,7 +275,6 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="3,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -296,7 +282,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -304,7 +290,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -312,7 +298,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -320,7 +306,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -328,7 +314,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -336,7 +322,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="3,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
@@ -351,7 +337,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -359,7 +345,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -367,7 +353,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -375,7 +361,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -383,7 +369,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -391,7 +377,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -399,7 +385,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="4,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
@@ -414,7 +400,7 @@
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="5,0"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -422,7 +408,7 @@
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="5,1"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -430,7 +416,7 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
+                    tools:ignore="ContentDescription"
                     android:text="5,2"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -438,7 +424,6 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
-                    android:layout_gravity="left"
                     android:text="5,3"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -446,7 +431,6 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:text="5,4"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -454,7 +438,6 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:text="5,5"
                     android:background="@drawable/circle_grey"/>
                 <Button
@@ -462,7 +445,6 @@
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:text="5,6"
                     android:background="@drawable/circle_grey"/>
             </LinearLayout>
