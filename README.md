@@ -6,7 +6,7 @@ Project Final Android course AlticeRD, in which has developed a game that runs o
 - Horizontal
 - Diagonally
 
-## Eplanation of the game in Spanish:
+## Game Description in Spanish:
 
 Please visit link beow:
 
