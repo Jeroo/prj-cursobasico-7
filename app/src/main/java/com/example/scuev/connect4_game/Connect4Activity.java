@@ -22,12 +22,13 @@ import java.util.Map;
 public class Connect4Activity extends AppCompatActivity implements View.OnClickListener
 {
 
-    private Connect4     objConnect4;
-    private int          varPosXInt,varPosYInt;
-    private Button       buttonCircle,buttonTurn,buttonNewGame;
-    private TextView     textViewRed,textViewBlue;
-    private String       won;
-    private LinearLayout row1,row2,row3,row4,row5,row6;
+    private Connect4                 objConnect4;
+    private int                      varPosXInt,varPosYInt,childCount;
+    private Button                   buttonCircle,buttonTurn,buttonNewGame;
+    private TextView                 textViewRed,textViewBlue;
+    private String                   won;
+    private LinearLayout             row0,row1,row2,row3,row4,row5;
+    private Map<String,LinearLayout> listRows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,12 +42,14 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         //set content view AFTER ABOVE sequence (to avoid crash)
         this.setContentView(R.layout.activity_connect4);
 
-        row1 = (LinearLayout)findViewById(R.id.layout_circlesRow1);
-        row2 = (LinearLayout)findViewById(R.id.layout_circlesRow2);
-        row3 = (LinearLayout)findViewById(R.id.layout_circlesRow3);
-        row4 = (LinearLayout)findViewById(R.id.layout_circlesRow4);
-        row5 = (LinearLayout)findViewById(R.id.layout_circlesRow5);
-        row6 = (LinearLayout)findViewById(R.id.layout_circlesRow6);
+        row0 = (LinearLayout)findViewById(R.id.layout_circlesRow1);
+        row1 = (LinearLayout)findViewById(R.id.layout_circlesRow2);
+        row2 = (LinearLayout)findViewById(R.id.layout_circlesRow3);
+        row3 = (LinearLayout)findViewById(R.id.layout_circlesRow4);
+        row4 = (LinearLayout)findViewById(R.id.layout_circlesRow5);
+        row5 = (LinearLayout)findViewById(R.id.layout_circlesRow6);
+
+        generateVector();
 
         //Get evens from imageButtons
         findViewById(R.id._0_0).setOnClickListener(this);
@@ -204,17 +207,9 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
     private void resetGame()
     {
 
-        Map<String, LinearLayout> listRows = new HashMap<>();
-        listRows.put("row1",row1);
-        listRows.put("row2",row2);
-        listRows.put("row3",row3);
-        listRows.put("row4",row4);
-        listRows.put("row5",row5);
-        listRows.put("row6",row6);
-
-        for (int x=1;x<=6;x++)
+        for (int x=0;x< 6;x++)
         {
-            int childCount = listRows.get("row"+x).getChildCount();
+            childCount = listRows.get("row"+x).getChildCount();
             for(int i=0;i<childCount;i++)
             {
                 View child =  listRows.get("row"+x).getChildAt(i);
@@ -225,5 +220,32 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         }
         buttonTurn.setText(R.string.blue_turn);
         buttonTurn.setBackgroundColor(Color.BLUE);
+        childCount = 0;
+    }
+
+    private void generateVector()
+    {
+        listRows = new HashMap<>();
+        listRows.put("row0",row0);
+        listRows.put("row1",row1);
+        listRows.put("row2",row2);
+        listRows.put("row3",row3);
+        listRows.put("row4",row4);
+        listRows.put("row5",row5);
+
+        for (int x=0;x<6;x++)
+        {
+            childCount = listRows.get("row"+x).getChildCount();
+            for(int i=0;i<childCount;i++)
+            {
+                Button child =  (Button) listRows.get("row"+x).getChildAt(i);
+                //reset all Buttons in vector Layout
+                child.setText(""+x+","+i);
+
+            }
+        }
+
+        childCount = 0;
+
     }
 }
