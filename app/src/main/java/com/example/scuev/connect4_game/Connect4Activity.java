@@ -1,6 +1,6 @@
 package com.example.scuev.connect4_game;
 
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
@@ -9,13 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -241,7 +239,6 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                 Button child =  (Button) listRows.get("row"+x).getChildAt(i);
                 //reset all Buttons in vector Layout
                 child.setText(""+x+","+i);
-
             }
         }
 

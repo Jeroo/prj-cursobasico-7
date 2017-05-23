@@ -81,6 +81,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_0"
                     android:layout_width="@dimen/buttons_dimens"
@@ -90,11 +91,13 @@
                 <Button
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_1"
+                    style="?android:borderlessButtonStyle"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_2"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -102,6 +105,7 @@
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_3"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -109,6 +113,7 @@
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_4"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -116,6 +121,7 @@
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_5"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -123,6 +129,7 @@
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="ContentDescription"
                     android:id="@+id/_0_6"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -137,6 +144,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_0"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -144,6 +152,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_1"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
@@ -151,6 +160,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_2"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -158,6 +168,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_3"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -165,6 +176,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_4"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -172,6 +184,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_5"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -179,6 +192,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_1_6"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -193,6 +207,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_0"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -200,6 +215,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_1"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -207,6 +223,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_2"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -214,6 +231,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_3"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -221,6 +239,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_4"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -228,6 +247,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_5"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -235,6 +255,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_2_6"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -249,12 +270,14 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_0"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_1"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -262,6 +285,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_2"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -269,6 +293,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_3"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -276,6 +301,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_4"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -283,6 +309,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_5"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -290,6 +317,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_3_6"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -304,6 +332,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_0"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -311,6 +340,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_1"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -318,6 +348,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_2"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -325,6 +356,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_3"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -332,6 +364,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_4"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -339,6 +372,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_5"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -346,6 +380,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_4_6"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -360,6 +395,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_0"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
@@ -367,6 +403,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_1"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_width="@dimen/buttons_dimens"
@@ -374,6 +411,7 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_2"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
@@ -381,24 +419,28 @@
                     tools:ignore="ContentDescription"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_3"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="@dimen/buttons_dimens"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_4"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_5"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
                     android:layout_height="match_parent"
                     android:background="@drawable/circle_grey"/>
                 <Button
+                    style="?android:borderlessButtonStyle"
                     android:id="@+id/_5_6"
                     android:layout_width="@dimen/buttons_dimens"
                     android:textColor="@color/colorTransparentButtonsBlack"
