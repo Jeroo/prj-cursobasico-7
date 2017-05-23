@@ -1,5 +1,6 @@
 package com.example.scuev.connect4_game;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
@@ -8,12 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -23,7 +25,7 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
     private Connect4     objConnect4;
     private int          varPosXInt,varPosYInt;
     private Button       buttonCircle,buttonTurn,buttonNewGame;
-    TextView             textViewRed,textViewBlue;
+    private TextView     textViewRed,textViewBlue;
     private String       won;
     private LinearLayout row1,row2,row3,row4,row5,row6;
 
@@ -35,13 +37,6 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-       /* this.getWindow().getDecorView().setSystemUiVisibility
-        (
-              View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            | View.SYSTEM_UI_FLAG_FULLSCREEN
-            //| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-        );*/
 
         //set content view AFTER ABOVE sequence (to avoid crash)
         this.setContentView(R.layout.activity_connect4);
@@ -114,23 +109,18 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         //Get Score
         textViewRed     = (TextView) findViewById(R.id.red_score_label);
         textViewBlue    = (TextView) findViewById(R.id.blue_score_label);
-        textViewRed.setText(String.format ("%d", objConnect4.getScoreGameRed()));
-        textViewBlue.setText(String.format ("%d", objConnect4.getScoreGameBlue()));
-        /*
-        textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
-        textViewBlue.setText(Integer.toString(objConnect4.getScoreGameBlue()));
-        */
+
+        textViewRed.setText(String.valueOf(objConnect4.getScoreGameRed()));
+        textViewBlue.setText(String.valueOf(objConnect4.getScoreGameBlue()));
+
+
     }
 
-   /* public void clock(View view)
-    {
-        android.view.animation.Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.clockwise);
-        buttonTurn.setAnimation(animation);
-    }*/
 
     @Override
     public void onClick(View v)
     {
+
 
         switch (v.getId())
         {
@@ -140,7 +130,8 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                 objConnect4.newGame();
                 resetGame();
                 Toast.makeText(com.example.scuev.connect4_game.Connect4Activity.this,"New Game",Toast.LENGTH_SHORT).show();
-                break;
+
+                 break;
             default:
 
                 try
@@ -148,8 +139,8 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                     buttonCircle         = (Button)findViewById(v.getId());
                     String valuePosition = buttonCircle.getText().toString();
                     String[] parts       = valuePosition.split(",");
-                    varPosXInt           = Integer.parseInt(parts[0].toString());
-                    varPosYInt           = Integer.parseInt(parts[1].toString());
+                    varPosXInt           = Integer.parseInt(parts[0]);
+                    varPosYInt           = Integer.parseInt(parts[1]);
 
                 }catch (Exception ex)
                 {
@@ -172,6 +163,7 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                                 buttonTurn.setBackgroundColor(Color.RED);
                                 objConnect4.fillMatrix(varPosXInt, varPosYInt, 1);
                                 won = "Blue Win!";
+
                             } else if (objConnect4.getTurn() == 2)
                             {
                                 buttonCircle.setBackgroundResource(R.drawable.red);
@@ -189,17 +181,14 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                     {
                         AlertDialog alert = new AlertDialog.Builder(this)
                                 .setTitle("Information")
-                                .setMessage(won+" Do you want to continue playing?")
+                                .setMessage(won.toUpperCase())
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int i) {
                                         objConnect4.newGame();
                                         resetGame();
-                                        textViewRed.setText(String.format ("%d", objConnect4.getScoreGameRed()));
-                                        textViewBlue.setText(String.format ("%d", objConnect4.getScoreGameBlue()));
-                                        //textViewRed.setText(Integer.toString(objConnect4.getScoreGameRed()));
-                                        //textViewBlue.setText(Integer.toString());
-
+                                        textViewRed.setText(String.valueOf(objConnect4.getScoreGameRed()));
+                                        textViewBlue.setText(String.valueOf(objConnect4.getScoreGameBlue()));
                                         Toast.makeText(com.example.scuev.connect4_game.Connect4Activity.this,"Very well, do not give up!",Toast.LENGTH_SHORT).show();
 
                                     }
@@ -207,14 +196,6 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
                         alert.setCanceledOnTouchOutside(false);
                         alert.show();
                     }
-
-                    /*this.getWindow().getDecorView().setSystemUiVisibility
-                    (
-                          View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        //| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    );*/
                 }
                 break;
         }

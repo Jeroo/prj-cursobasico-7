@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState)
     {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        Intent intentLocal = null;
+        Intent intentLocal;
 
         switch (v.getId()){
 
