@@ -67,6 +67,39 @@
                 android:background="@android:color/holo_green_light"
                 android:text="@string/new_game" />
         </LinearLayout>
+        <ScrollView
+            android:id="@+id/my_scrolview"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="70dip"
+            android:layout_gravity="center"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbars="none"
+            android:scrollbarSize="0dp"
+            tools:context="com.example.salvador.animations_practices.TouchActivity">
+
+            <RelativeLayout
+
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <Button
+                    android:id="@+id/image"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:contentDescription="@string/app_name"
+                    android:background="@drawable/blue"
+                    android:layout_width="40dip"
+                    android:textColor="@color/colorTransparentButtonsBlack"
+                    android:layout_height="40dip"
+                    />
+
+            </RelativeLayout>
+
+        </ScrollView>
         <LinearLayout
             android:id="@+id/layout_circles"
             android:layout_width="match_parent"
