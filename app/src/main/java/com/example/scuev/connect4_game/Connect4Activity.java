@@ -22,7 +22,7 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
 
     private Connect4                 objConnect4;
     private int                      varPosXInt,varPosYInt,childCount;
-    private Button                   buttonCircle,buttonTurn,buttonNewGame;
+    private Button                   buttonCircle,buttonTurn;
     private TextView                 textViewRed,textViewBlue;
     private String                   won;
     private LinearLayout             row0,row1,row2,row3,row4,row5;
@@ -103,7 +103,6 @@ public class Connect4Activity extends AppCompatActivity implements View.OnClickL
         objConnect4     = new Connect4();
         //Get Button Turn and New Game
         buttonTurn      = (Button)findViewById(R.id.turn_label);
-        buttonNewGame   = (Button)findViewById(R.id.new_game_button);
         //set Button Turn default
         buttonTurn.setText(R.string.blue_turn);
         buttonTurn.setBackgroundColor(Color.BLUE);
