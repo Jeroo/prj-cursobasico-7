@@ -30,14 +30,14 @@ public class Connect4
         this.blueColorScore = 0;
     }
 
-    public void fillMatrixWithZero()
+    void fillMatrixWithZero()
     {
 
         for (int[] row: matrixConnect4)
             Arrays.fill(row, 0);
     }
 
-    public boolean validateMovedOverCircle(int posX, int posY){
+    boolean validateMovedOverCircle(int posX, int posY){
 
         /* Validating that the position in x is 5,
         * because if it is 5 we are in the last row.
@@ -52,15 +52,14 @@ public class Connect4
             otherwise we are in a position that does not have a tab below.
             */
             if (matrixConnect4[posX+1][posY] != 0)
-            {
                 return true;
-            }
+
         }
 
         return false;
     }
 
-    public void fillMatrix(int posX, int posY,int color)
+    void fillMatrix(int posX, int posY,int color)
     {
 
         if (matrixConnect4[posX][posY] == 0)
@@ -93,7 +92,7 @@ public class Connect4
         }
     }
 
-    public boolean sortMatrixRight(int posX, int posY)
+    boolean sortMatrixRight(int posX, int posY)
     {
         if (posY == 6)
         {
@@ -178,7 +177,7 @@ public class Connect4
         return labelEndGame;
     }
 
-    public boolean sortMatrixLeft(int posX,int posY)
+    boolean sortMatrixLeft(int posX,int posY)
     {
 
         if (posY == 0)
@@ -272,7 +271,7 @@ public class Connect4
         return labelEndGame;
     }
 
-    public boolean sortMatrixDown(int posX, int posY)
+    boolean sortMatrixDown(int posX, int posY)
     {
 
         if (posX == 5)
@@ -318,7 +317,7 @@ public class Connect4
 
                 } catch (Exception ex)
                 {
-
+                    labelEndGame = false;
 
                 } finally
                 {
@@ -349,7 +348,7 @@ public class Connect4
         return  labelEndGame;
     }
 
-    public boolean sortMatrixDiagonallyLeftDown(int posX, int posY)
+    boolean sortMatrixDiagonallyLeftDown(int posX, int posY)
     {
         if (posX == 5)
         {
@@ -431,59 +430,46 @@ public class Connect4
         return labelEndGame;
     }
 
-    public boolean sortMatrixDiagonallyLeftTop(int posX,int posY)
+    boolean sortMatrixDiagonallyLeftTop(int posX,int posY)
     {
 
         if (posY == 0)
         {
             labelEndGame = false;
 
-        }else
-        {
-
-            try
-            {
-                if (counterBlue > 1)
-                {
+        }else {
+            try {
+                if (counterBlue > 1) {
                     counterBlue--;
                 }
 
-                if (counterRed > 1)
-                {
+                if (counterRed > 1) {
                     counterRed--;
                 }
 
-                for (int i = 0; i < 5; i++)
-                {
+                for (int i = 0; i < 5; i++) {
 
-                    if (matrixConnect4[posX - i][posY - i] == matrixConnect4[posX][posY])
-                    {
+                    if (matrixConnect4[posX - i][posY - i] == matrixConnect4[posX][posY]) {
 
-                        if (blueColor == matrixConnect4[posX][posY])
-                        {
+                        if (blueColor == matrixConnect4[posX][posY]) {
 
                             counterBlue++;
                         }
-                        if (redColor == matrixConnect4[posX][posY])
-                        {
+                        if (redColor == matrixConnect4[posX][posY]) {
 
                             counterRed++;
                         }
 
-                        if (counterBlue == 4 || counterRed == 4)
-                        {
+                        if (counterBlue == 4 || counterRed == 4) {
                             break;
                         }
 
-                    } else
-                    {
+                    } else {
 
-                        if (counterBlue < 2)
-                        {
+                        if (counterBlue < 2) {
                             counterBlue = 0;
 
-                        } else if (counterRed < 2)
-                        {
+                        } else if (counterRed < 2) {
                             counterRed = 0;
                         }
 
@@ -492,21 +478,18 @@ public class Connect4
 
                 }
 
-            } catch (Exception ex)
-            {
+            } catch (Exception ex) {
 
+                labelEndGame = false;
 
-            } finally
-            {
+            } finally {
 
-                if (counterRed == 4)
-                {
+                if (counterRed == 4) {
 
                     labelEndGame = true;
                 }
 
-                if (counterBlue == 4)
-                {
+                if (counterBlue == 4) {
 
                     labelEndGame = true;
                 }
@@ -519,7 +502,7 @@ public class Connect4
         return labelEndGame;
     }
 
-    public boolean sortMatrixDiagonallyRightDown(int posX, int posY)
+    boolean sortMatrixDiagonallyRightDown(int posX, int posY)
     {
 
         if (posX == 5)
@@ -599,7 +582,7 @@ public class Connect4
         return labelEndGame;
     }
 
-    public boolean sortMatrixDiagonallyRightTop(int posX,int posY)
+    boolean sortMatrixDiagonallyRightTop(int posX,int posY)
     {
 
         if (posY == 6)
@@ -687,7 +670,7 @@ public class Connect4
 
     }
 
-    public boolean stopGame()
+    boolean stopGame()
     {
 
         if (labelEndGame)
@@ -706,7 +689,7 @@ public class Connect4
         return labelEndGame;
     }
 
-    public void newGame()
+     void newGame()
     {
         this.counterBlue    = 0;
         this.counterRed     = 0;
@@ -716,7 +699,7 @@ public class Connect4
         fillMatrixWithZero();
     }
 
-    public void setScoreGame(int colorWinner)
+     void setScoreGame(int colorWinner)
     {
         /*
         * if winner is 1 is blue win
@@ -733,22 +716,22 @@ public class Connect4
         }
     }
 
-    public int getScoreGameRed()
+    int getScoreGameRed()
     {
         return this.redColorScore;
     }
 
-    public int getScoreGameBlue()
+    int getScoreGameBlue()
     {
         return this.blueColorScore;
     }
 
-    public int getTurn()
+     int getTurn()
     {
         return this.turn;
     }
 
-    public void setTurn(int turn)
+     void setTurn(int turn)
     {
         this.turn = turn;
     }
