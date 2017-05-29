@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         );
 
         //Get evens from buttons
-        findViewById(R.id.play_game_button_one).setOnClickListener(this);
+        findViewById(R.id.about_button).setOnClickListener(this);
         findViewById(R.id.play_game_button_two).setOnClickListener(this);
         findViewById(R.id.exit_button).setOnClickListener(this);
 
@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intentLocal = new Intent(MainActivity.this, Connect4Activity.class);
                 startActivity(intentLocal);
                 break;
-            case R.id.play_game_button_one:
-                Toast.makeText(MainActivity.this,"Coming Soon!",Toast.LENGTH_SHORT).show();
+            case R.id.about_button:
+                intentLocal = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intentLocal);
 
                 break;
             case R.id.exit_button:

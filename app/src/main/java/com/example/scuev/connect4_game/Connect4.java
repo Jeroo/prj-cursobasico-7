@@ -15,7 +15,7 @@ public class Connect4
     blue which is the number 1 represented by a constant integer
     and red which is the number 2 also represented by a constant integer.
     */
-    private static final int redColor  = 2,blueColor = 1;
+    private static final int RED_COLOR  = 2,BLUE_COLOR = 1;
     private int              counterBlue,counterRed,turn,blueColorScore,redColorScore;
     boolean                  labelEndGame;
     private int[][]          matrixConnect4;
@@ -113,12 +113,12 @@ public class Connect4
                         if (matrixConnect4[posX][posY + i] == matrixConnect4[posX][posY])
                         {
 
-                            if (blueColor == matrixConnect4[posX][posY])
+                            if (BLUE_COLOR == matrixConnect4[posX][posY])
                             {
 
                                 counterBlue++;
                             }
-                            if (redColor == matrixConnect4[posX][posY])
+                            if (RED_COLOR == matrixConnect4[posX][posY])
                             {
 
                                 counterRed++;
@@ -209,11 +209,11 @@ public class Connect4
                         if (matrixConnect4[posX][posY - i] == matrixConnect4[posX][posY])
                         {
 
-                            if (blueColor == matrixConnect4[posX][posY])
+                            if (BLUE_COLOR == matrixConnect4[posX][posY])
                             {
                                 counterBlue++;
                             }
-                            if (redColor == matrixConnect4[posX][posY])
+                            if (RED_COLOR == matrixConnect4[posX][posY])
                             {
                                 counterRed++;
                             }
@@ -292,12 +292,12 @@ public class Connect4
                         if (matrixConnect4[posX + i][posY] == matrixConnect4[posX][posY])
                         {
 
-                            if (blueColor == matrixConnect4[posX][posY])
+                            if (BLUE_COLOR == matrixConnect4[posX][posY])
                             {
 
                                 counterBlue++;
                             }
-                            if (redColor == matrixConnect4[posX][posY])
+                            if (RED_COLOR == matrixConnect4[posX][posY])
                             {
 
                                 counterRed++;
@@ -372,12 +372,12 @@ public class Connect4
                     if (matrixConnect4[posX + i][posY + i] == matrixConnect4[posX][posY])
                     {
 
-                        if (blueColor == matrixConnect4[posX][posY])
+                        if (BLUE_COLOR == matrixConnect4[posX][posY])
                         {
 
                             counterBlue++;
                         }
-                        if (redColor == matrixConnect4[posX][posY])
+                        if (RED_COLOR == matrixConnect4[posX][posY])
                         {
 
                             counterRed++;
@@ -451,11 +451,11 @@ public class Connect4
 
                     if (matrixConnect4[posX - i][posY - i] == matrixConnect4[posX][posY]) {
 
-                        if (blueColor == matrixConnect4[posX][posY]) {
+                        if (BLUE_COLOR == matrixConnect4[posX][posY]) {
 
                             counterBlue++;
                         }
-                        if (redColor == matrixConnect4[posX][posY]) {
+                        if (RED_COLOR == matrixConnect4[posX][posY]) {
 
                             counterRed++;
                         }
@@ -528,12 +528,12 @@ public class Connect4
                     if (matrixConnect4[posX + i][posY - i] == matrixConnect4[posX][posY])
                     {
 
-                        if (blueColor == matrixConnect4[posX][posY])
+                        if (BLUE_COLOR == matrixConnect4[posX][posY])
                         {
 
                             counterBlue++;
                         }
-                        if (redColor == matrixConnect4[posX][posY])
+                        if (RED_COLOR == matrixConnect4[posX][posY])
                         {
                             counterRed++;
                         }
@@ -610,12 +610,12 @@ public class Connect4
                     if (matrixConnect4[posX - i][posY + i] == matrixConnect4[posX][posY])
                     {
 
-                        if (blueColor == matrixConnect4[posX][posY])
+                        if (BLUE_COLOR == matrixConnect4[posX][posY])
                         {
 
                             counterBlue++;
                         }
-                        if (redColor == matrixConnect4[posX][posY])
+                        if (RED_COLOR == matrixConnect4[posX][posY])
                         {
 
                             counterRed++;
@@ -706,11 +706,11 @@ public class Connect4
         * then set label score with plus 1
         * else the winner is red and then set label score with plus 1
         * */
-        if (colorWinner == blueColor)
+        if (colorWinner == BLUE_COLOR)
         {
             blueColorScore++;
 
-        } else if (colorWinner == redColor)
+        } else if (colorWinner == RED_COLOR)
         {
             redColorScore++;
         }
@@ -726,12 +726,12 @@ public class Connect4
         return this.blueColorScore;
     }
 
-     int getTurn()
+    int getTurn()
     {
         return this.turn;
     }
 
-     void setTurn(int turn)
+    void setTurn(int turn)
     {
         this.turn = turn;
     }

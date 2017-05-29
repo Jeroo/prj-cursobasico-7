@@ -49,14 +49,14 @@
             android:layout_marginBottom="10dp"/>
 
         <Button
-                android:id="@+id/play_game_button_one"
+                android:id="@+id/about_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:textColor="#FFF"
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="10dp"
-                android:text="One Player and CPU"/>
+                android:text="About"/>
         <Button
             android:id="@+id/exit_button"
             android:layout_width="match_parent"
